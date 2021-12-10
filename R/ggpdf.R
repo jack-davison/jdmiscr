@@ -15,7 +15,7 @@
 
 ggpdf = function(filename, plot, height, width, keep_svg = FALSE, ...){
 
-  filename = gsub("myfile.pdf",
+  filename = gsub(filename,
                   pattern = "\\.svg|\\.pdf",
                   replacement = "")
 
@@ -27,6 +27,6 @@ ggpdf = function(filename, plot, height, width, keep_svg = FALSE, ...){
 
   rsvg::rsvg_pdf(svg = svgname, file = pdfname)
 
-  if(keep_svg){unlink(svgname)}
+  if(!keep_svg){unlink(svgname)}
 
 }
