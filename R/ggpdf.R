@@ -8,7 +8,7 @@
 #' @param height Plot size in units ("in", "cm", "mm", or "px").
 #' @param width Plot size in units ("in", "cm", "mm", or "px").
 #' @param keep_svg Keep the svg file? Defaults to FALSE.
-#' @param ... Other arguments to pass to ggsave.
+#' @param ... Other arguments to pass to svg().
 #'
 #' @return
 #' @export
@@ -22,8 +22,9 @@ ggpdf = function(filename, plot, height, width, keep_svg = FALSE, ...){
   svgname = paste0(filename, ".svg")
   pdfname = paste0(filename, ".pdf")
 
-  ggplot2::ggsave(filename = svgname, plot = plot, device = "svg",
-         height = height, width = width, ...)
+  svg(filename = svgname, width = width, height = height, ...)
+  plot(plot)
+  dev.off()
 
   rsvg::rsvg_pdf(svg = svgname, file = pdfname)
 

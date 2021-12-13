@@ -17,7 +17,7 @@ ggpdf(filename, plot, height, width, keep_svg = FALSE, ...)
 
 \item{keep_svg}{Keep the svg file? Defaults to FALSE.}
 
-\item{...}{Other arguments to pass to ggsave.}
+\item{...}{Other arguments to pass to svg().}
 }
 \value{
 
