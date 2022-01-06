@@ -2,4 +2,10 @@
 
 export("%>%")
 export(ggpdf)
+export(kmh_to_mph)
+export(kmh_to_ms)
+export(mph_to_kmh)
+export(mph_to_ms)
+export(ms_to_kmh)
+export(ms_to_mph)
 importFrom(magrittr,"%>%")
